@@ -113,9 +113,11 @@ extension PostmarkSwift {
         /// Initializer with multiple recipients
         ///
         /// Creates an email with the required fields.
-        public init(from: EmailAddress, to: [EmailAddress], subject: String, textBody: String, htmlBody: String? = nil) {
+        public init(from: EmailAddress, to: [EmailAddress], replyTo: EmailAddress? = nil, cc: [EmailAddress]? = nil, subject: String, textBody: String, htmlBody: String? = nil) {
             self.from = from
             self.to = to
+            self.replyTo = replyTo
+            self.cc = cc
             self.subject = subject
             self.textBody = textBody
             self.htmlBody = htmlBody
